@@ -32,7 +32,6 @@ class MemberServiceTest {
         member.setName("hello");
         //when
         Long saveId = memberService.join(member);
-
         //then
         Member findMember = memberRepository.findById(saveId).get();
         assertEquals(member.getName(), findMember.getName());
