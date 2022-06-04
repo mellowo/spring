@@ -21,4 +21,36 @@ public class TestController {
         return "hello "  + name;
 
     }
+
+    @GetMapping("animal")
+    @ResponseBody
+    public Animal animalTest(@RequestParam("name") String name, Model model){
+
+        Animal animal = new Animal();
+        animal.setName(name);
+        animal.setAge("1");
+        return animal;
+    }
+
+
+    class Animal{
+        private String name;
+        private String age;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getAge() {
+            return age;
+        }
+
+        public void setAge(String age) {
+            this.age = age;
+        }
+    }
 }
